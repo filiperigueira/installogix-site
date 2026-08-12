@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Installogix | Automação e IoT</title>
+
+https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+header{
+    background:#0f172a;
+    color:white;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#00d4ff;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00d4ff;
+}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 8%;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.1rem;
+    margin-bottom:30px;
+    color:#cbd5e1;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:#00d4ff;
+    color:#0f172a;
+    font-weight:600;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.hero-image{
+    width:500px;
+}
+
+.hero-image img{
+    width:100%;
+}
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    color:#0f172a;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#2563eb;
+}
+
+.benefits{
+    background:#0f172a;
+    color:white;
+}
+
+.benefits .cards .card{
+    background:#1e293b;
+    color:white;
+}
+
+.contact{
+    text-align:center;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+footer{
+    background:#020617;
+    color:#94a3b8;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:60px;
+        gap:40px;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero-image{
+        width:100%;
+        max-width:400px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Installogix</div>
+
+    <nav>
+        <a href="#servicos">Serviços</a>
+lucoesSoluções</a>
+        <a href="#contato">Contato</a>
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>Automação Inteligente e Soluções IoT para o Futuro</h1>
+
+        <p>
+            Transformamos dados em resultados com automação industrial,
+            monitoramento remoto, Internet das Coisas (IoT) e integração de sistemas.
+        </p>
+
+        <a href="#contato" class="btn">Solic
+    </div>
+
+    <div class="hero-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/2103/210383</div>
+
+</section>
+
+<section id="servicos">
+
+    <h2 class="section-title">Nossos Serviços</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Automação Industrial</h3>
+            <p>
+                Desenvolvimento de sistemas inteligentes para aumentar a
+                produtividade, eficiência e segurança operacional.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Internet das Coisas (IoT)</h3>
+            <p>
+                Sensores conectados, coleta de dados em tempo real e monitoramento remoto.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Integração de Sistemas</h3>
+            <p>
+                Comunicação entre equipamentos, ERPs, dashboards e plataformas cloud.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="benefits">
+
+    <h2 class="section-title">Por que escolher a Installogix?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>⚡ Eficiência</h3>
+            <p>Redução de custos operacionais através da automação inteligente.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Dados em Tempo Real</h3>
+            <p>Monitoramento contínuo para decisões rápidas e assertivas.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔒 Segurança</h3>
+            <p>Infraestrutura robusta para proteção dos seus processos e ativos.</p>
+        </div>
+
+        <div class="card">
+            <h3>☁️ Conectividade</h3>
+            <p>Integração com nuvem, aplicações móveis e plataformas corporativas.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="solucoes">
+
+    <h2 class="section-title">Soluções Inteligentes</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Smart Buildings</h3>
+            <p>Controle de energia, iluminação e climatização.</p>
+        </div>
+
+        <div class="card">
+            <h3>Indústria 4.0</h3>
+            <p>Digitalização de processos e análise preditiva.</p>
+        </div>
+
+        <div class="card">
+            <h3>Monitoramento Remoto</h3>
+            <p>Painéis em tempo real acessíveis de qualquer lugar.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contato">
+
+    <h2 class="section-title">Fale Conosco</h2>
+
+    <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="E-mail" required>
+        <textarea rows="5" placeholder="Como podemos ajudar?"></textarea>
+
+        <button class="btn" type="submit">
+            Enviar Mensagem
+        </button>
+    </form>
+
+</section>
+
+<footer>
+    © 2026 Installogix Automação e IoT | Tecnologia para conectar o futuro.
+</footer>
+
+</body>
+</html>
