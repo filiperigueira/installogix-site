@@ -3,106 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Installogix | Automação e IoT</title>
+
+<title>Installogix | Automação, Engenharia e IoT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+    --white:#F3F4F5;
+    --gray:#646B74;
+    --navy:#071425;
+    --blue:#05376C;
+    --orange:#FF7100;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f8fafc;
-    color:#1e293b;
+    background:var(--white);
+    color:#222;
+    overflow-x:hidden;
 }
 
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
 header{
-    background:#0f172a;
-    color:white;
-    padding:20px 8%;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(7,20,37,.95);
+    backdrop-filter:blur(10px);
+    padding:18px 0;
+}
+
+.header-content{
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:700;
-    color:#00d4ff;
+    font-size:32px;
+    font-weight:800;
+    color:var(--orange);
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin-left:25px;
+    margin-left:30px;
+    font-weight:500;
     transition:.3s;
 }
 
 nav a:hover{
-    color:#00d4ff;
+    color:var(--orange);
 }
 
+/* ================= HERO ================= */
+
 .hero{
-    min-height:90vh;
+    min-height:100vh;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    padding:0 8%;
-    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    background:
+    linear-gradient(
+    135deg,
+    var(--navy),
+    var(--blue)
+    );
     color:white;
+    padding-top:80px;
 }
 
 .hero-content{
-    max-width:600px;
+    max-width:700px;
 }
 
-.hero h1{
-    font-size:3.5rem;
-    line-height:1.2;
-    margin-bottom:20px;
+.hero-content h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:25px;
 }
 
-.hero p{
-    font-size:1.1rem;
-    margin-bottom:30px;
-    color:#cbd5e1;
+.hero-content span{
+    color:var(--orange);
+}
+
+.hero-content p{
+    font-size:1.15rem;
+    color:#d4d6dc;
+    margin-bottom:35px;
 }
 
 .btn{
     display:inline-block;
-    padding:15px 30px;
-    background:#00d4ff;
-    color:#0f172a;
-    font-weight:600;
+    padding:16px 35px;
+    background:var(--orange);
+    color:white;
     text-decoration:none;
-    border-radius:8px;
+    border-radius:10px;
+    font-weight:600;
     transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:translateY(-4px);
+    background:#e26400;
 }
 
-.hero-image{
-    width:500px;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
 }
 
 .hero-image img{
     width:100%;
+    max-width:500px;
 }
 
+/* ================= SECTION ================= */
+
 section{
-    padding:80px 8%;
+    padding:100px 0;
 }
 
 .section-title{
     text-align:center;
-    font-size:2.5rem;
-    margin-bottom:50px;
-    color:#0f172a;
+    font-size:2.8rem;
+    margin-bottom:20px;
+    color:var(--navy);
+    font-weight:700;
 }
+
+.section-subtitle{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    color:var(--gray);
+    margin-bottom:60px;
+}
+
+/* ================= CARDS ================= */
 
 .cards{
     display:grid;
@@ -112,9 +170,9 @@ section{
 
 .card{
     background:white;
+    border-radius:18px;
     padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
     transition:.3s;
 }
 
@@ -122,37 +180,75 @@ section{
     transform:translateY(-8px);
 }
 
+.card-icon{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
 .card h3{
+    color:var(--blue);
     margin-bottom:15px;
-    color:#2563eb;
 }
 
-.benefits{
-    background:#0f172a;
+/* ================= NUMBERS ================= */
+
+.numbers{
+    background:var(--navy);
     color:white;
 }
 
-.benefits .cards .card{
-    background:#1e293b;
-    color:white;
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
 }
 
-.contact{
+.stat{
     text-align:center;
 }
 
+.stat h2{
+    color:var(--orange);
+    font-size:3rem;
+}
+
+.stat p{
+    color:#d6d9dd;
+}
+
+/* ================= BENEFITS ================= */
+
+.benefits{
+    background:#eef2f6;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:linear-gradient(
+    135deg,
+    var(--navy),
+    var(--blue)
+    );
+    color:white;
+}
+
+.contact .section-title{
+    color:white;
+}
+
 form{
-    max-width:600px;
+    max-width:700px;
     margin:auto;
 }
 
 input,
 textarea{
     width:100%;
-    padding:15px;
+    padding:18px;
+    border:none;
+    border-radius:10px;
     margin-bottom:15px;
-    border:1px solid #cbd5e1;
-    border-radius:8px;
 }
 
 button{
@@ -160,167 +256,338 @@ button{
     cursor:pointer;
 }
 
+/* ================= FOOTER ================= */
+
 footer{
-    background:#020617;
-    color:#94a3b8;
+    background:#030d17;
+    color:#c0c6ce;
     text-align:center;
-    padding:25px;
+    padding:40px 20px;
 }
 
-@media(max-width:900px){
-    .hero{
-        flex-direction:column;
+footer strong{
+    color:var(--orange);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width:900px){
+
+    .hero-grid{
+        grid-template-columns:1fr;
         text-align:center;
-        padding-top:60px;
-        gap:40px;
     }
 
-    .hero h1{
-        font-size:2.5rem;
+    .hero-content h1{
+        font-size:2.8rem;
     }
 
-    .hero-image{
-        width:100%;
-        max-width:400px;
+    nav{
+        display:none;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">Installogix</div>
 
-    <nav>
-        <a href="#servicos">Serviços</a>
-lucoesSoluções</a>
-        <a href="#contato">Contato</a>
+<div class="container header-content">
+
+<div class="logo">
+INSTALLOGIX
+</div>
+
+<nav>
+<a href="#sobre">Empresa</a>
+<a href="#servicos">Serviços</a>
+<a href="#solucoes">Soluções</a>
+<a href="#contato">Contato</a>
+</nav>
+
+</div>
+
 </header>
 
 <section class="hero">
 
-    <div class="hero-content">
-        <h1>Automação Inteligente e Soluções IoT para o Futuro</h1>
+<div class="container hero-grid">
 
-        <p>
-            Transformamos dados em resultados com automação industrial,
-            monitoramento remoto, Internet das Coisas (IoT) e integração de sistemas.
-        </p>
+<div class="hero-content">
 
-        <a href="#contato" class="btn">Solic
-    </div>
+<h1>
+Soluções Inteligentes em
+<span>Automação, Energia e IoT</span>
+</h1>
 
-    <div class="hero-image">
-        <img src="https://cdn-icons-png.flaticon.com/512/2103/210383</div>
+<p>
+A Installogix desenvolve projetos, montagens, sistemas de automação,
+eficiência energética e soluções inteligentes para indústrias,
+empresas e empreendimentos que desejam aumentar produtividade,
+reduzir custos e acelerar a transformação digital.
+</p>
+
+<a href="#contato" class="btn">
+Solicitar Orçamento
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png"
+alt="Automação Industrial">
+
+</div>
+
+</div>
+
+</section>
+
+<section id="sobre">
+
+<div class="container">
+
+<h2 class="section-title">
+Quem Somos
+</h2>
+
+<p class="section-subtitle">
+
+A Installogix é especializada em engenharia elétrica,
+automação industrial, energia solar fotovoltaica,
+qualidade de energia, IoT, monitoramento remoto e
+integração de sistemas.
+
+Nossa missão é transformar tecnologia em resultado,
+fornecendo soluções modernas, seguras e eficientes
+para o setor industrial, comercial e corporativo.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="numbers">
+
+<div class="container">
+
+<div class="stats">
+
+<div class="stat">
+<h2>IoT</h2>
+<p>Monitoramento em tempo real</p>
+</div>
+
+<div class="stat">
+<h2>PLC</h2>
+<p>Automação industrial avançada</p>
+</div>
+
+<div class="stat">
+<h2>SCADA</h2>
+<p>Supervisão e controle inteligente</p>
+</div>
+
+<div class="stat">
+<h2>24h</h2>
+<p>Dados e conectividade contínua</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 <section id="servicos">
 
-    <h2 class="section-title">Nossos Serviços</h2>
+<div class="container">
 
-    <div class="cards">
+<h2 class="section-title">
+Nossos Serviços
+</h2>
 
-        <div class="card">
-            <h3>Automação Industrial</h3>
-            <p>
-                Desenvolvimento de sistemas inteligentes para aumentar a
-                produtividade, eficiência e segurança operacional.
-            </p>
-        </div>
+<p class="section-subtitle">
+Projetos, montagens, automação e gestão de energia
+para empresas de todos os portes.
+</p>
 
-        <div class="card">
-            <h3>Internet das Coisas (IoT)</h3>
-            <p>
-                Sensores conectados, coleta de dados em tempo real e monitoramento remoto.
-            </p>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <h3>Integração de Sistemas</h3>
-            <p>
-                Comunicação entre equipamentos, ERPs, dashboards e plataformas cloud.
-            </p>
-        </div>
+<div class="card">
+<div class="card-icon">⚙️</div>
+<h3>Montagens Técnicas</h3>
+<p>
+Painéis elétricos, automação,
+instalações industriais, instrumentação,
+subestações, geradores e CFTV.
+</p>
+</div>
 
-    </div>
+<div class="card">
+<div class="card-icon">📐</div>
+<h3>Projetos e Laudos</h3>
+<p>
+Projetos elétricos, SPDA,
+NR-10, aterramento,
+termografia e qualidade da energia.
+</p>
+</div>
 
-</section>
+<div class="card">
+<div class="card-icon">☀️</div>
+<h3>Energia Solar</h3>
+<p>
+Projeto, homologação,
+implantação de usinas fotovoltaicas
+e geração distribuída.
+</p>
+</div>
 
-<section class="benefits">
+<div class="card">
+<div class="card-icon">📡</div>
+<h3>Automação & IoT</h3>
+<p>
+PLC, SCADA,
+sensores inteligentes,
+telemetria e monitoramento remoto.
+</p>
+</div>
 
-    <h2 class="section-title">Por que escolher a Installogix?</h2>
+<div class="card">
+<div class="card-icon">🔋</div>
+<h3>Carregadores Veiculares</h3>
+<p>
+Infraestrutura e instalação
+de carregadores para veículos elétricos.
+</p>
+</div>
 
-    <div class="cards">
+<div class="card">
+<div class="card-icon">⚡</div>
+<h3>Gestão de Energia</h3>
+<p>
+Diagnósticos energéticos,
+contratos de energia
+e eficiência operacional.
+</p>
+</div>
 
-        <div class="card">
-            <h3>⚡ Eficiência</h3>
-            <p>Redução de custos operacionais através da automação inteligente.</p>
-        </div>
+</div>
 
-        <div class="card">
-            <h3>📊 Dados em Tempo Real</h3>
-            <p>Monitoramento contínuo para decisões rápidas e assertivas.</p>
-        </div>
-
-        <div class="card">
-            <h3>🔒 Segurança</h3>
-            <p>Infraestrutura robusta para proteção dos seus processos e ativos.</p>
-        </div>
-
-        <div class="card">
-            <h3>☁️ Conectividade</h3>
-            <p>Integração com nuvem, aplicações móveis e plataformas corporativas.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="solucoes">
-
-    <h2 class="section-title">Soluções Inteligentes</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Smart Buildings</h3>
-            <p>Controle de energia, iluminação e climatização.</p>
-        </div>
-
-        <div class="card">
-            <h3>Indústria 4.0</h3>
-            <p>Digitalização de processos e análise preditiva.</p>
-        </div>
-
-        <div class="card">
-            <h3>Monitoramento Remoto</h3>
-            <p>Painéis em tempo real acessíveis de qualquer lugar.</p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<section class="contact" id="contato">
+<section class="benefits" id="solucoes">
 
-    <h2 class="section-title">Fale Conosco</h2>
+<div class="container">
 
-    <form>
-        <input type="text" placeholder="Nome" required>
-        <input type="email" placeholder="E-mail" required>
-        <textarea rows="5" placeholder="Como podemos ajudar?"></textarea>
+<h2 class="section-title">
+Soluções Inteligentes
+</h2>
 
-        <button class="btn" type="submit">
-            Enviar Mensagem
-        </button>
-    </form>
+<div class="cards">
+
+<div class="card">
+<h3>🏭 Indústria 4.0</h3>
+<p>
+Digitalização de processos,
+análise preditiva e dashboards.
+</p>
+</div>
+
+<div class="card">
+<h3>🏢 Smart Buildings</h3>
+<p>
+Controle de iluminação,
+energia, climatização e segurança.
+</p>
+</div>
+
+<div class="card">
+<h3>☁️ Cloud & Integração</h3>
+<p>
+Conectividade entre equipamentos,
+ERP, BI e plataformas corporativas.
+</p>
+</div>
+
+<div class="card">
+<h3>📊 Monitoramento Remoto</h3>
+<p>
+Painéis em tempo real acessíveis
+de qualquer lugar.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contato" class="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+Fale Conosco
+</h2>
+
+<form>
+
+<input
+type="text"
+placeholder="Nome">
+
+<input
+type="email"
+placeholder="E-mail">
+
+<textarea
+rows="5"
+placeholder="Como podemos ajudar?"></textarea>
+
+<button type="submit" class="btn">
+Enviar Mensagem
+</button>
+
+</form>
+
+</div>
 
 </section>
 
 <footer>
-    © 2026 Installogix Automação e IoT | Tecnologia para conectar o futuro.
+
+<p>
+<strong>INSTALLOGIX</strong>
+</p>
+
+<p>
+Tecnologia • Energia • Automação • IoT
+</p>
+
+<br>
+
+<p>
+📧 contato@installogix.com.br
+</p>
+
+<p>
+📞 (31) 98226-5454
+</p>
+
+<p>
+© 2026 Installogix Engenharia e Automação
+</p>
+
 </footer>
 
 </body>
