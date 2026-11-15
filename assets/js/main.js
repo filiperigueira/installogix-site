@@ -55,13 +55,57 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
 }
 
 // ============ FORM SUBMISSION ============
-const form = document.querySelector('form');
+const form = document.getElementById('contact-form') || document.querySelector('form');
+const formStatus = document.getElementById('form-status');
+const formAlert = document.getElementById('form-alert');
+
 if (form) {
-  form.addEventListener('submit', () => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
     const btn = form.querySelector('.btn');
+    const originalText = btn ? btn.textContent : 'Enviar mensagem';
     if (btn) {
       btn.textContent = 'Enviando...';
       btn.disabled = true;
+    }
+    if (formStatus) {
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+    }
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok && data.success) {
+        form.reset();
+        if (formStatus) {
+          formStatus.textContent = 'Mensagem enviada com sucesso!';
+          formStatus.className = 'form-status success';
+        }
+        if (formAlert) {
+          formAlert.textContent = 'Mensagem enviada com sucesso!';
+          formAlert.classList.add('show');
+          setTimeout(() => formAlert.classList.remove('show'), 5000);
+        }
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      } else {
+        throw new Error(data.message || 'Erro no envio');
+      }
+    } catch (err) {
+      if (formStatus) {
+        formStatus.textContent = 'Não foi possível enviar. Tente novamente ou use o e-mail/telefone abaixo.';
+        formStatus.className = 'form-status error';
+      }
+    } finally {
+      if (btn) {
+        btn.textContent = originalText || 'Enviar mensagem';
+        btn.disabled = false;
+      }
     }
   });
 }
