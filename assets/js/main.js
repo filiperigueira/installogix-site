@@ -81,7 +81,7 @@ if (form) {
       });
       const data = await res.json().catch(() => ({}));
 
-      if (res.ok && data.success) {
+      if (res.ok && data.success !== false) {
         form.reset();
         if (formStatus) {
           formStatus.textContent = 'Mensagem enviada com sucesso!';
@@ -98,7 +98,10 @@ if (form) {
       }
     } catch (err) {
       if (formStatus) {
-        formStatus.textContent = 'Não foi possível enviar. Tente novamente ou use o e-mail/telefone abaixo.';
+        const msg = err && err.message && err.message !== 'Erro no envio' ? err.message : '';
+        formStatus.textContent = msg
+          ? `Não foi possível enviar: ${msg}`
+          : 'Não foi possível enviar. Tente novamente ou use o e-mail/telefone abaixo.';
         formStatus.className = 'form-status error';
       }
     } finally {
