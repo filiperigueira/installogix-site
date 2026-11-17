@@ -399,9 +399,23 @@ footer {
 .footer-contacts a {
   color: var(--white);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-contacts a:hover {
+  color: var(--orange);
+}
+
+.whatsapp-link svg {
+  width: 20px;
+  height: 20px;
+  color: #25D366;
+  flex: 0 0 auto;
+}
+
+.whatsapp-link:hover svg {
   color: var(--orange);
 }
 
